@@ -31,3 +31,8 @@ export FZF_DEFAULT_OPTS="
 --bind='alt-s:preview-page-down'
 --preview 'bat --color=always --style=header,grid --line-range :300 {}'
 "
+
+
+# Source goto
+[[ -s "/usr/local/share/goto.sh" ]] && source /usr/local/share/goto.sh
+
