@@ -25,4 +25,13 @@ bin/
 .config/pulse
 .config/xfce4
 .config/QtProject.conf 
-
+.cargo/
+.config/discord/
+.config/omf
+.config/picom
+.pki
+.atom/
+.config/Atom/
+.config/goto
+.config/Google Play Music Desktop Player/
+.config/qtile/settings/__pycache*
