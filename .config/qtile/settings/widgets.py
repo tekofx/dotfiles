@@ -60,14 +60,14 @@ primary_widgets = [
     powerline('color4', 'dark'),
 
     icon(bg="color4", text=' '), # Icon: nf-fa-download
-    
-    widget.Pacman(**base(bg='color4'), update_interval=1800),
+   
+    widget.Pacman(**base(bg='color4'),execute='pamac-manager --updates'),
 
     powerline('color3', 'color4'),
 
-    icon(bg="color3", text=' '),  # Icon: nf-fa-feed
+    icon(bg="color3", text='度 '),  # Icon: nf-fa-feed
     
-    widget.Net(**base(bg='color3'), interface='enp3so'),
+    widget.CPU(**base(bg='color3')),
 
     powerline('color2', 'color3'),
 
