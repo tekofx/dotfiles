@@ -145,10 +145,13 @@ let g:startify_lists = [
 " Configure bookmarks
 let g:startify_bookmarks = [
             \ { 'b': '~/.bashrc' },
+            \ { 'f': '~/.config/fish/config.fish' },
             \ { 'g': '~/.config/nvim/config/general.vim' },
             \ { 'i': '~/.config/nvim/init.vim' },
             \ { 'k': '~/.config/nvim/config/keybindings.vim' },
             \ { 'p': '~/.config/nvim/config/plugins.vim' },
+            \ { 'q': '~/.config/qtile/' },
+            \ { 't': '~/.config/nvim/config/terminal.vim' },
             \ { 't': '~/.config/nvim/config/terminal.vim' },
             \ { 'z': '~/.zshrc' },
             \ ]
