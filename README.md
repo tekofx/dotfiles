@@ -193,6 +193,9 @@ To change the profile picture, we hace to move to ~ the picture we want and chan
 ## Fish
 ```
 fisher add matchai/spacefish
+fisher add rafaelrinaldi/pure
+fisher add jethrokuan/z
+fisher add wfxr/forgit
 ```
 
 
