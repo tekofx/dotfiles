@@ -61,7 +61,7 @@ primary_widgets = [
 
     icon(bg="color4", text=' '), # Icon: nf-fa-download
    
-    widget.Pacman(**base(bg='color4'),execute='pamac-manager --updates'),
+    widget.CheckUpdates(**base(bg='color4'), update_interval=60),
 
     powerline('color3', 'color4'),
 
