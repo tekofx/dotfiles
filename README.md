@@ -150,8 +150,10 @@ sudo pacman -S ncdu
 ```
 sudo pacman -S exa
 ```
-
-
+### tldr
+```
+yay -S tldr
+```
 ## Shell configuration
 Copy your shell's rc to ~
 
