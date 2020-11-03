@@ -195,8 +195,8 @@ To change the profile picture, we hace to move to ~ the picture we want and chan
 Install plugins:
 
 ```
-fisher add jethrokuan/z
-fisher add wfxr/forgit
+omf install z
+omf install https://github.com/wfxr/forgit
 ```
 
 Install themes:
