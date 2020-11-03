@@ -90,10 +90,9 @@ Install fish:
 sudo pacman -S fish curl
 ```
 
-And install fisher and omf to handle plugins and themes:
+And install omf to handle plugins and themes:
 
 ```
-curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
 curl -L https://get.oh-my.fish | fish
 ```
 
