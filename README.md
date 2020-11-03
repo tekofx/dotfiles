@@ -84,16 +84,17 @@ cp -r ~/bin/dotfiles/.config/alacritty ~/.config
 
 ## Terminal utilities
 ### Fish
-Install fish with and fisher to handle plugins:
+Install fish:
 
 ```
 sudo pacman -S fish curl
 ```
 
-And install fisher to handle plugins:
+And install fisher and omf to handle plugins and themes:
 
 ```
 curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
+curl -L https://get.oh-my.fish | fish
 ```
 
 If you wan to change bash for fish:
@@ -191,13 +192,19 @@ yay -S lightdm-webkit-theme-aether
 To change the profile picture, we hace to move to ~ the picture we want and change it's name to .face
 
 ## Fish
+Install plugins:
+
 ```
-fisher add matchai/spacefish
-fisher add rafaelrinaldi/pure
 fisher add jethrokuan/z
 fisher add wfxr/forgit
 ```
 
+Install themes:
+
+```
+omf install pure
+omf install spacefish
+```
 
 # Alacritty
 To change a theme run:
