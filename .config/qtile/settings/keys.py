@@ -34,6 +34,9 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     ([mod], "Tab", lazy.next_layout()),
     ([mod, "shift"], "Tab", lazy.prev_layout()),
 
+    # Toggle show or hide top bar
+    ([mod], "a", lazy.hide_show_bar("top")),
+
     # Kill window
     ([mod], "w", lazy.window.kill()),
 
@@ -83,6 +86,7 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     ([], "XF86AudioMute", lazy.spawn(
         "pactl set-sink-mute @DEFAULT_SINK@ toggle"
     )),
+
 
     # Brightness
     ([], "XF86MonBrightnessUp", lazy.spawn("brightnessctl set +10%")),
