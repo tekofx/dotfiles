@@ -3,7 +3,7 @@ alias ls "exa --group-directories-first"
 alias tree "exa -T"
 alias gs "git status"
 alias gp "git push"
-
+alias gc "git commit"
 
 # fzf setup
 export FZF_DEFAULT_OPTS="
