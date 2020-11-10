@@ -42,3 +42,6 @@ bin/
 avatar.jpg
 .config/fish/conf.d
 .fzf.bash
+.config/eDEX-UI/
+.electron-gyp/
+.z
