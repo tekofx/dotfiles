@@ -1,2 +1,3 @@
 setxkbmap es &
+picom &
 feh --bg-scale wallpapers/01.jpg &
