@@ -135,10 +135,10 @@ For Bash:
 echo 'source ~/bin/forgit/forgit.plugin.sh' >> ~/.bashrc
 ```
 
-For Zsh:
+For Fish:
 
 ```
-echo 'source ~/bin/forgit/forgit.plugin.zsh' >> ~/.zshrc
+omf install https://github.com/wfxr/forgit
 ```
 
 ### ncdu
