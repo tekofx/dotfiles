@@ -51,19 +51,15 @@ You will need to change your terminal font to Meslo
 ## Coc
 Make sure you have installed Nodejs with Brew, if not run:
 
-`/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"`
-
-`echo 'eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)' >> ~.profile`
-
-`eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)`
-
 `brew install node`
 
 
 
 ### coc-java
-Add the JDK path to your PATH.
 
+```
+sudo pacman -S jdk8-openjdk
+```
 
 ### coc-clangd
 Install clangd with:
