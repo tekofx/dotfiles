@@ -53,7 +53,7 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     # ------------ App Configs ------------
 
     # Menu
-    ([mod], "m", lazy.spawn("rofi -show drun")),
+    ([mod], "space", lazy.spawn("rofi -show drun")),
 
     # Window Nav
     ([mod, "shift"], "m", lazy.spawn("rofi -show")),
@@ -67,9 +67,14 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     # Terminal
     ([mod], "Return", lazy.spawn("env LIBGL_ALWAYS_SOFTWARE=1 alacritty")),
 
-    # Redshift
-    ([mod], "r", lazy.spawn("redshift -O 2400")),
-    ([mod, "shift"], "r", lazy.spawn("redshift -x")),
+    # IDE
+    ([mod], "c", lazy.spawn("code")),
+
+    # Telegram
+    ([mod], "t", lazy.spawn("telegram-desktop")),
+
+    # Gpmdp
+    ([mod], "g", lazy.spawn("gpmdp")),
 
     # Screenshot
     ([mod], "s", lazy.spawn("scrot")),
