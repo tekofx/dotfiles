@@ -1,3 +1,42 @@
+- [Arch configuration](#arch-configuration)
+  - [Lightdm and qtile installation](#lightdm-and-qtile-installation)
+  - [Basic configuration](#basic-configuration)
+  - [Qtile configuration](#qtile-configuration)
+  - [Xprofile](#xprofile)
+  - [Alacritty configuration](#alacritty-configuration)
+  - [Neovim configuration](#neovim-configuration)
+    - [Installation](#installation)
+    - [Plugin configuration](#plugin-configuration)
+      - [Requirements](#requirements)
+      - [Airline & Nerdtree](#airline--nerdtree)
+      - [Coc](#coc)
+        - [coc-java](#coc-java)
+        - [coc-clangd](#coc-clangd)
+      - [Plugins included](#plugins-included)
+        - [General use](#general-use)
+        - [Git](#git)
+    - [Keybindings](#keybindings)
+      - [General use](#general-use-1)
+        - [Plugins](#plugins)
+  - [Terminal utilities](#terminal-utilities)
+    - [Fish](#fish)
+    - [Bat](#bat)
+    - [Fzf](#fzf)
+    - [Navi](#navi)
+    - [Goto](#goto)
+    - [Forgit](#forgit)
+    - [ncdu](#ncdu)
+    - [exa](#exa)
+    - [tldr](#tldr)
+  - [Shell configuration](#shell-configuration)
+- [Themes and customization](#themes-and-customization)
+  - [Gtk](#gtk)
+  - [Qtile](#qtile)
+  - [Picom](#picom)
+  - [Lightdm](#lightdm)
+  - [Fish](#fish-1)
+- [Alacritty](#alacritty)
+
 # Arch configuration
 ## Lightdm and qtile installation
 After installing Arch we will need to install lightdm and qtile by running:
@@ -81,6 +120,117 @@ Copy configs
 cp -r ~/bin/dotfiles/.config/alacritty ~/.config
 ```
 ## Neovim configuration
+
+
+
+
+
+### Installation
+Install neovim:
+`sudo pacman -S neovim`
+
+Clone this repo on ~/.config/nvim by running
+
+`git clone https://github.com/Tekofx/nvim-config.git`
+
+
+### Plugin configuration
+#### Requirements
+To install all dependencies run:
+
+`sudo pacman -S python3 python2 nodejs npm python2-pip ruby`
+
+We will need vim-plug to manage plugins. To install it run:
+
+```sh
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+```
+
+To install all plugins in the init.vim run :
+
+`:PlugInstall` on Neovim
+
+or
+
+`nvim +PlugInstall +qa` on the command line
+
+#### Airline & Nerdtree
+This two plugins need an special font to show icons, I recommend  nerd-font-ubuntu-mono.
+You will need to change your terminal font to Meslo
+
+
+#### Coc
+
+##### coc-java
+
+```
+sudo pacman -S jdk8-openjdk
+```
+
+##### coc-clangd
+Install clangd with:
+
+`:CocCommand clang.install`
+
+Add the clangd path to your PATH. If you used the command above it should be on:
+~/.config/coc/extensions/coc-clangd-data/install/10.0.0/clangd_10.0.0/bin/
+
+
+#### Plugins included
+
+##### General use
+- **NerdTree**: Tree explorer
+- **fzf**: Fuzzy finder
+- **Airline**: Status line
+- **Airline-themes**: Customize airline
+- **Coc**: Completion tool
+- **Devicons**: Icons for NerdTree
+- **Vim-auto-save**: Autosave buffer
+
+##### Git
+- **Signify**: Show git info at left comlumn
+- **Fugitive**: Git commands in neovim
+- **Rhubarb**: See GitHub repo on browser
+- **Nerdtree-git-plugin**: See git info on Nerdtree
+
+
+### Keybindings
+#### General use
+
+| Shortcut                                      | Action                              |
+| --------------------                          | ----------------------------------- |
+| <kbd>Space</kbd>                              | Leader Key                          |
+| <kbd>Tab</kbd>                                | Change between opened buffers       |
+| <kbd>Ctrl</kbd>+<kbd>t</kbd>                  | Open terminal                       |
+| <kbd>Space </kbd>+<kbd>s</kbd>                | Save buffer                         |
+| <kbd>Space</kbd>+<kbd>q</kbd>                 | Quit neovim                         |
+| <kbd>Alt</kbd>+<kbd>h</kbd>                   | Go to left panel                    |
+| <kbd>Alt</kbd>+<kbd>j</kbd>                   | Go to bottom panel                  |
+| <kbd>Alt</kbd>+<kbd>k</kbd>                   | Go to top panel                     |
+| <kbd>Alt</kbd>+<kbd>l</kbd>                   | Go to right panel                   |
+
+
+
+
+##### Plugins
+| Shortcut                                      | Action                              |
+| --------------------                          | ----------------------------------- |
+| <kbd>Space</kbd>+<kbd>b</kbd>                 | Toggle NerdTree                     |
+| <kbd>Space</kbd>+<kbd>p</kbd>                 | Fzf search                          |
+| <kbd>Tab</kbd>                                | Navigate between options on coc     |
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Terminal utilities
 ### Fish
