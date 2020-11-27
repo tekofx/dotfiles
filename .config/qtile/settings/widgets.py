@@ -57,33 +57,76 @@ primary_widgets = [
 
     separator(),
 
-    powerline('color4', 'dark'),
+    powerline(
+        'color3', 
+        'dark'
+        ),
 
-    icon(bg="color4", text=' '), # Icon: nf-fa-download
-   
-    widget.CheckUpdates(**base(bg='color4'), update_interval=60),
 
-    powerline('color3', 'color4'),
 
-    icon(bg="color3", text='度 '),  # Icon: nf-fa-feed
+    icon(
+        bg="color3", 
+        text='度 '
+        ),  # Icon: nf-fa-feed
     
-    widget.CPU(**base(bg='color3')),
+    widget.CPU(
+        **base(bg='color3')
+        ),
 
-    powerline('color2', 'color3'),
+    powerline(
+        'color4', 
+        'color3'
+        ),
 
-    widget.CurrentLayoutIcon(**base(bg='color2'), scale=0.65),
+    icon(
+        bg="color4", 
+        text=' '
+        ),  # Icon: nf-fa-feed
 
-    widget.CurrentLayout(**base(bg='color2'), padding=5),
+    widget.Memory(
+        **base(bg='color4')
+        ),
 
-    powerline('color1', 'color2'),
+    powerline(
+        'color2', 
+        'color4'
+        ),
 
-    icon(bg="color1", fontsize=17, text=' '), # Icon: nf-mdi-calendar_clock
+    widget.CurrentLayoutIcon(
+        **base(bg='color2'), 
+        scale=0.65
+        ),
 
-    widget.Clock(**base(bg='color1'), format='%d/%m/%Y - %H:%M '),
+    widget.CurrentLayout(
+        **base(bg='color2'), 
+        padding=5
+        ),
 
-    powerline('dark', 'color1'),
+    powerline(
+        'color1', 
+        'color2'
+        ),
 
-    widget.Systray(background=colors['dark'], padding=5),
+    icon(
+        bg="color1", 
+        fontsize=17, 
+        text=' '
+        ), # Icon: nf-mdi-calendar_clock
+
+    widget.Clock(
+        **base(bg='color1'), 
+        format='%d/%m/%Y - %H:%M '
+        ),
+
+    powerline(
+        'dark', 
+        'color1'
+        ),
+
+    widget.Systray(
+        background=colors['dark'], 
+        padding=5
+        ),
 
 ]
 
