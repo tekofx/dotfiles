@@ -16,6 +16,8 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     # Toggle fulscreen
     ([mod], "f", lazy.window.toggle_fullscreen()),
 
+    # Toggle picom
+    ([mod], "o", lazy.spawn('~/.config/qtile/scripts/picom-toggle.sh')),
 
     # Switch between windows in current stack pane
     ([mod], "j", lazy.layout.down()),
