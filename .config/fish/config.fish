@@ -4,7 +4,7 @@ alias tree "exa -T"
 alias gs "git status"
 alias gp "git push"
 alias gc "git commit"
-alias dotfiles "/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME"
+alias dotfiles "/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME"
 
 # fzf setup
 export FZF_DEFAULT_OPTS="
