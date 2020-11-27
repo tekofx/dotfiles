@@ -62,8 +62,6 @@ primary_widgets = [
         'dark'
         ),
 
-
-
     icon(
         bg="color3", 
         text='度 '
