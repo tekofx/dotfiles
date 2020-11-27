@@ -6,5 +6,5 @@ cbatticon -u 5 &
 volumeicon &
 # Wallpaper
 feh --bg-scale wallpapers/selected* &
-picom --config ~/.config/qtile/picom.conf &
+picom --config ~/.config/qtile/scripts/picom.conf &
 setxkbmap es &
