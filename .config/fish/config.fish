@@ -15,7 +15,7 @@ alias dot "/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME"
 alias ds "/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME status"
 alias da "/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME add" 
 alias dc "/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME commit -m" 
-
+alias dp "/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME push" 
 
 ##########################################
 #              fzf setup                 #
