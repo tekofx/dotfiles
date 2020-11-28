@@ -1,12 +1,26 @@
-# Aliases
+##########################################
+#                 Aliases                #
+##########################################
+
 alias ls "exa --group-directories-first"
 alias tree "exa -T"
+
+# git
 alias gs "git status"
 alias gp "git push"
 alias gc "git commit"
-alias dotfiles "/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME"
 
-# fzf setup
+# dotfiles
+alias dot "/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME"
+alias ds "/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME status"
+alias da "/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME add" 
+alias dc "/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME commit -m" 
+
+
+##########################################
+#              fzf setup                 #
+##########################################
+
 export FZF_DEFAULT_OPTS="
 --ansi
 --info=inline
