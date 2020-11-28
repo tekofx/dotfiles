@@ -32,3 +32,13 @@ export FZF_DEFAULT_OPTS="
 --bind='alt-s:preview-page-down'
 --preview 'bat --color=always --style=header,grid --line-range :300 {}'
 "
+
+
+##########################################
+#              PATH                      #             
+##########################################
+
+set PATH ~/.config/rofi/bin/ $PATH
+
+
+
