@@ -6,6 +6,7 @@
 
 from libqtile.config import Key
 from libqtile.command import lazy
+import subprocess
 
 
 mod = "mod4"
@@ -41,7 +42,7 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     ([mod, "shift"], "Tab", lazy.prev_layout()),
 
     # Toggle show or hide top bar
-    ([mod], "a", lazy.hide_show_bar("top")),
+    ([mod, "shift"], "f", lazy.hide_show_bar("top")),
 
     # Kill window
     ([mod], "w", lazy.window.kill()),
@@ -55,6 +56,11 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
 
     ([mod, "control"], "q", lazy.shutdown()),
     ([mod], "r", lazy.spawncmd()),
+
+
+    # ------------ Rofi Configs ------------
+    ([mod], "a", lazy.spawn("~/.config/rofi/bin/applet_apps")),
+    
 
     # ------------ App Configs ------------
 
