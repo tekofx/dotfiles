@@ -5,7 +5,7 @@ cbatticon -u 5 &
 # systray volume
 volumeicon &
 # Wallpaper
-feh --bg-scale wallpapers/selected* &
+feh --bg-scale wallpapers/selected/* &
 
 # Utilities
 picom --config ~/.config/qtile/scripts/picom.conf &
