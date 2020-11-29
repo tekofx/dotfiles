@@ -8,9 +8,6 @@
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
 
-# feh configuration
-feh --bg-scale ~/wallpapers/01.jpg
-
 # VBoxClient configuration 
 VBoxClient-all
 
