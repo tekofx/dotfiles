@@ -6,3 +6,4 @@
 ./qtile.sh
 ./rofi.sh
 ./terminal_utilities.sh
+./customization
