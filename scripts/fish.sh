@@ -4,7 +4,10 @@
 sudo pacman -S fish curl
 
 # omf
-curl -L https://get.oh-my.fish | fish
+fish <<'END_FISH'
+    curl -L https://get.oh-my.fish | fish
+END_FISH
+
 
 # Make fish default shell
 chsh -s /usr/bin/fish
