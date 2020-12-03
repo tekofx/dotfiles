@@ -11,6 +11,10 @@ sudo pacman -S bat exa ncdu
 # Install gotop, navi and tldr
 yay -S gotop navi tldr
 
+# Copy navi cheats
+git clone https://github.com/tekofx/navi-cheats.git ~/bin/
+cp -r ~/bin/navi-cheats/ ~/.local/share/navi
+
 # Install fish utilities
 fish <<'END_FISH'
     omf install z
