@@ -1,26 +1,26 @@
 background_opacity: 1
 colors:
   bright:
-    black: '0x434c5e'
-    blue: '0x81a1c1'
-    cyan: '0x88c0d0'
-    green: '0xa3be8c'
-    magenta: '0xb48ead'
-    red: '0xbf616a'
-    white: '0xe5e9f0'
-    yellow: '0xebcb8b'
+    black: '0x434758'
+    blue: '0x9cc4ff'
+    cyan: '0xa3f7ff'
+    green: '0xddffa7'
+    magenta: '0xe1acff'
+    red: '0xff8b92'
+    white: '0xffffff'
+    yellow: '0xffe585'
   normal:
-    black: '0x3b4252'
-    blue: '0x81a1c1'
-    cyan: '0x88c0d0'
-    green: '0xa3be8c'
-    magenta: '0xb48ead'
-    red: '0xbf616a'
-    white: '0xbfd5de'
-    yellow: '0xebcb8b'
+    black: '0x101010'
+    blue: '0x82aaff'
+    cyan: '0x89ddff'
+    green: '0xc3e88d'
+    magenta: '0xc792ea'
+    red: '0xf07178'
+    white: '0xd0d0d0'
+    yellow: '0xffcb6b'
   primary:
-    background: '0x2e3440'
-    foreground: '0xd8dee9'
+    background: '0x292d3e'
+    foreground: '0xbbc5ff'
 font:
   bold:
     family: UbuntuMono Nerd Font
