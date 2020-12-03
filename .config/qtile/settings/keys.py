@@ -7,9 +7,11 @@
 from libqtile.config import Key
 from libqtile.command import lazy
 import subprocess
+import os
 
 
 mod = "mod4"
+home = os.path.expanduser('~')
 
 keys = [Key(key[0], key[1], *key[2:]) for key in [
     # ------------ Window Configs ------------
@@ -18,7 +20,7 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     ([mod], "f", lazy.window.toggle_fullscreen()),
 
     # Toggle picom
-    ([mod], "o", lazy.spawn('~/.config/qtile/scripts/picom-toggle.sh')),
+    # ([mod], "o", lazy.spawn(home + '/.config/qtile/scripts/picom-toggle.sh')),
 
     # Switch between windows in current stack pane
     ([mod], "j", lazy.layout.down()),
@@ -59,7 +61,10 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
 
 
     # ------------ Rofi Configs ------------
-    ([mod], "a", lazy.spawn("~/.config/rofi/bin/applet_apps")),
+    ([mod], "a", lazy.spawn(home + '/.config/rofi/bin/applet_apps')),
+    ([mod], "r", lazy.spawn(home + '/.config/rofi/bin/launcher_misc')),
+
+
     
 
     # ------------ App Configs ------------
