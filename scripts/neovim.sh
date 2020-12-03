@@ -2,7 +2,13 @@
 sudo pacman -S neovim
 
 # Neovim dependencies
-sudo pacman -S python3 python2 nodejs npm python2-pip ruby
+sudo pacman -S python3 python2 nodejs npm python2-pip ruby python-pip
+python3 -m pip install --user --upgrade pynvim
+python2 -m pip install --user --upgrade pynvim
+
+
+# Copy configs
+cp -r ~/dotfiles/.config/nvim/ ~/.config
 
 # Vim-plug
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
@@ -13,3 +19,6 @@ nvim +PlugInstall +qa
 
 # Font
 yay -S nerd-font-ubuntu-mono
+
+# 
+
