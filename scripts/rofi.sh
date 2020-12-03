@@ -9,5 +9,13 @@ yay -S nerd-fonts-ubuntu-mono
 git clone https://github.com/davatorium/rofi-themes.git
 sudo cp rofi-themes/User\ Themes/onedark.rasi /usr/share/rofi/themes
 
+
+# Widgets
+git clone https://github.com/adi1090x/rofi.git ~/bin/rofi-widgets
+cd ~/bin/rofi-widgets
+chmod +x setup.sh
+./setup.sh
+
+
 # Copy configs
-cp -r ~/dotfiles/.config/rofi ~/.config
+cp -r ~/dotfiles/.config/rofi ~/.config/
