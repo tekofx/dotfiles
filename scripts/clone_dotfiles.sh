@@ -1,3 +1,3 @@
 #!/bin/bash
 
-git clone https://github.com/tekofx/dotfiles.git ~/dotfiles
+git clone git@github.com:Tekofx/dotfiles.git ~/dotfiles
