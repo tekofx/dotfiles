@@ -10,4 +10,4 @@ git clone https://github.com/davatorium/rofi-themes.git
 sudo cp rofi-themes/User\ Themes/onedark.rasi /usr/share/rofi/themes
 
 # Copy configs
-cp -r dotfiles/.config/rofi ~/.config
+cp -r ~/dotfiles/.config/rofi ~/.config
