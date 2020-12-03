@@ -8,7 +8,7 @@ alias tree "exa -T"
 # git
 alias gs "git status"
 alias gp "git push"
-alias gc "git commit"
+alias gc "git commit -m"
 
 # dotfiles
 alias dot "/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME"
