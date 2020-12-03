@@ -29,8 +29,8 @@ options="$terminal\n$files\n$editor\n$browser\n$music\n$settings"
 chosen="$(echo -e "$options" | $rofi_command -p "Most Used" -dmenu -selected-row 0)"
 case $chosen in
     $terminal)
-		if [[ -f /usr/bin/termite ]]; then
-			termite &
+		if [[ -f /usr/bin/alacritty ]]; then
+			alacritty &
 		elif [[ -f /usr/bin/urxvt ]]; then
 			urxvt &
 		elif [[ -f /usr/bin/kitty ]]; then
@@ -39,17 +39,17 @@ case $chosen in
 			xterm &
 		elif [[ -f /usr/bin/xfce4-terminal ]]; then
 			xfce4-terminal &
-		elif [[ -f /usr/bin/gnome-terminal ]]; then
-			gnome-terminal &
+		elif [[ -f /usr/bin/termite ]]; then
+			termite &
 		else
 			msg "No suitable terminal found!"
 		fi
         ;;
     $files)
-		if [[ -f /usr/bin/thunar ]]; then
+		if [[ -f /usr/bin/nautilus ]]; then
+			nautilus &
+		elif [[ -f /usr/bin/thunar ]]; then
 			thunar &
-		elif [[ -f /usr/bin/pcmanfm ]]; then
-			pcmanfm &
 		else
 			msg "No suitable file manager found!"
 		fi
