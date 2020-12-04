@@ -16,3 +16,4 @@ For more info see the  [wiki](https://github.com/Tekofx/dotfiles/wiki)
 - Add blur to terminal
 - Config opacity for more programs
 - Fix opacity at using navi
+- Create script to change theme of all system
