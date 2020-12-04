@@ -1,5 +1,5 @@
 #!/bin/bash
 
-sudo pacman -S qtile
+sudo pacman -S qtile feh compton cbatticon
 cp -r ~/dotfiles/.config/qtile ~/.config
-git clone git@github.com:Tekofx/wallpapers.git ~/
+git clone https://github.com:Tekofx/wallpapers.git ~/
