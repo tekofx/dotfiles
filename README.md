@@ -10,3 +10,9 @@ git clone https://github.com/tekofx/dotfiles.git
 ```
 
 For more info see the  [wiki](https://github.com/Tekofx/dotfiles/wiki)
+
+
+## TODO
+- Add blur to terminal
+- Config opacity for more programs
+- Fix opacity at using navi
