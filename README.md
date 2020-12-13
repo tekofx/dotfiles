@@ -17,3 +17,4 @@ For more info see the  [wiki](https://github.com/Tekofx/dotfiles/wiki)
 - Config opacity for more programs
 - Fix opacity at using navi
 - Create script to change theme of all system
+- Create script to change/update wallpaper
