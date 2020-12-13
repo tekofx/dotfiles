@@ -1,8 +1,8 @@
 #!/bin/bash
-sudo pacman -S neovim
+sudo pacman -S neovim --noconfirm
 
 # Neovim dependencies
-sudo pacman -S python3 python2 nodejs npm python2-pip ruby python-pip
+sudo pacman -S python3 python2 nodejs npm python2-pip ruby python-pip --noconfirm
 python3 -m pip install --user --upgrade pynvim
 python2 -m pip install --user --upgrade pynvim
 

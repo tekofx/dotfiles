@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Fish and dependencies
-sudo pacman -S fish curl
+sudo pacman -S fish curl --noconfirm
 
 # omf
 fish <<'END_FISH'

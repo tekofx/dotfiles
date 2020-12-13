@@ -6,7 +6,7 @@ cd ~/bin/fzf/
 ./install
 
 # Install bat, exa and ncdu
-sudo pacman -S bat exa ncdu
+sudo pacman -S bat exa ncdu --noconfirm
 
 # Install gotop, navi and tldr
 yay -S gotop navi tldr

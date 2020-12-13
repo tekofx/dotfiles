@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Install rofi and dependencies
-sudo pacman -S rofi papirus-icon-theme
+sudo pacman -S rofi papirus-icon-theme --noconfirm
 yay -S nerd-fonts-ubuntu-mono
 
 

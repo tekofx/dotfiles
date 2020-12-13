@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # lxappearance
-sudo pacman -S lxappearance
+sudo pacman -S lxappearance --noconfirm
 
 # Create .themes folder
 mkdir ~/.themes
