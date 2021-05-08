@@ -2,8 +2,6 @@
 #                 Aliases                #
 ##########################################
 
-alias ls "exa --group-directories-first"
-alias tree "exa -T"
 
 # git
 alias gs "git status"
@@ -17,6 +15,9 @@ alias da "/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME add"
 alias dc "/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME commit -m" 
 alias dr "/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME remove" 
 alias dp "/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME push" 
+
+alias bat "batcat"
+alias gotop "gotop-brlin"
 
 ##########################################
 #              fzf setup                 #
@@ -38,8 +39,8 @@ export FZF_DEFAULT_OPTS="
 ##########################################
 #              PATH                      #             
 ##########################################
-
-set PATH ~/.config/rofi/bin/ $PATH
-
-
-
+set PATH /home/teko/bin/ $PATH
+set PATH /snap/bin/ $PATH
+set PATH /usr/sbin/ $PATH
+set PATH /home/teko/.local/bin $PATH 
+set PATH /home/teko/.cargo/bin/navi $PATH
