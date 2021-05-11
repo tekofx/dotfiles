@@ -16,7 +16,7 @@ nnoremap <S-TAB> :bprevious<CR>
 nnoremap <silent> <leader>b :NERDTreeToggle<CR>
 
 " Use alt+hjkl to move between split/vsplit panels
-tnoremap <A-h> <C-\><C-n><C-w>h
+tnoremap <A-h> <C-\><C-n><C-w>h 
 tnoremap <A-j> <C-\><C-n><C-w>j
 tnoremap <A-k> <C-\><C-n><C-w>k
 tnoremap <A-l> <C-\><C-n><C-w>l
@@ -24,6 +24,12 @@ nnoremap <A-h> <C-w>h
 nnoremap <A-j> <C-w>j
 nnoremap <A-k> <C-w>k
 nnoremap <A-l> <C-w>l
+
+" Change move keys
+nnoremap j k
+nnoremap k j
+nnoremap l h
+nnoremap ñ l
 
 " Search on fzf
 nnoremap <leader>p :Files<CR>
