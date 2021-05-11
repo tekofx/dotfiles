@@ -39,8 +39,13 @@ export FZF_DEFAULT_OPTS="
 ##########################################
 #              PATH                      #             
 ##########################################
-set PATH /home/teko/bin/ $PATH
+set PATH ~/bin/ $PATH
 set PATH /snap/bin/ $PATH
 set PATH /usr/sbin/ $PATH
-set PATH /home/teko/.local/bin $PATH 
-set PATH /home/teko/.cargo/bin/navi $PATH
+set PATH ~/.local/bin $PATH 
+set PATH ~/.cargo/bin/ $PATH
+
+##########################################
+#              navi                      #
+##########################################
+navi widget fish | source
