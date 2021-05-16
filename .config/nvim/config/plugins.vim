@@ -13,13 +13,15 @@ Plug 'ryanoasis/vim-devicons'
 Plug '907th/vim-auto-save'
 Plug 'mhinz/vim-startify'
 Plug 'preservim/nerdcommenter'
+Plug 'davidhalter/jedi-vim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'folke/todo-comments.nvim'
 " Git plugins
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 call plug#end()
-
 
 
 " =====================================
