@@ -16,6 +16,7 @@ Plug 'preservim/nerdcommenter'
 Plug 'davidhalter/jedi-vim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'folke/todo-comments.nvim'
+Plug 'romgrk/barbar.nvim'
 " Git plugins
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'mhinz/vim-signify'
