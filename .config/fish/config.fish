@@ -19,6 +19,9 @@ alias dp "/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME push"
 alias bat "batcat"
 alias gotop "gotop-brlin"
 
+# Kitty aliases
+alias icat "kitty +kitten icat"
+
 ##########################################
 #              fzf setup                 #
 ##########################################
