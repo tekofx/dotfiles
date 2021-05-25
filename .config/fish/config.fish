@@ -21,6 +21,7 @@ alias gotop "gotop-brlin"
 
 # Kitty aliases
 alias icat "kitty +kitten icat"
+alias ssh "kitty +kitten ssh"
 
 ##########################################
 #              fzf setup                 #
