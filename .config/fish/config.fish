@@ -21,7 +21,7 @@ alias gotop "gotop-brlin"
 
 # Kitty aliases
 alias icat "kitty +kitten icat"
-alias ssh "TERM=xterm ssh"
+#alias ssh "TERM=xterm ssh"
 
 ##########################################
 #              fzf setup                 #
