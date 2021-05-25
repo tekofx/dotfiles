@@ -21,7 +21,7 @@ alias gotop "gotop-brlin"
 
 # Kitty aliases
 alias icat "kitty +kitten icat"
-alias ssh "kitty +kitten ssh"
+alias ssh "TERM=xterm ssh"
 
 ##########################################
 #              fzf setup                 #
@@ -59,3 +59,6 @@ navi widget fish | source
 ##########################################
 set SPACEFISH_PACKAGE_SHOW false $SPACEFISH_PACKAGE_SHOW
 set SPACEFISH_NODE_SHOW false $SPACEFISH_NODE_SHOW
+
+
+set TERM xterm
