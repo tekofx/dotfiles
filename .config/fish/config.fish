@@ -27,6 +27,8 @@ alias ls "exa"
 alias icat "kitty +kitten icat"
 #alias ssh "TERM=xterm ssh"
 
+thefuck --alias | source 
+
 ##########################################
 #              fzf setup                 #
 ##########################################
@@ -52,6 +54,7 @@ set PATH /snap/bin/ $PATH
 set PATH /usr/sbin/ $PATH
 set PATH ~/.local/bin $PATH 
 set PATH ~/.cargo/bin/ $PATH
+set PATH /usr/local/bin/ $PATH
 
 ##########################################
 #              navi                      #
