@@ -27,7 +27,6 @@ alias ls "exa"
 alias icat "kitty +kitten icat"
 #alias ssh "TERM=xterm ssh"
 
-thefuck --alias | source 
 
 ##########################################
 #              fzf setup                 #
