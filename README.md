@@ -1,5 +1,5 @@
 # Dotfiles
-> All my configuration files for Arch
+> Dotfiles for the software I use
 
 ![Asset1](assets/asset1.png)
 
