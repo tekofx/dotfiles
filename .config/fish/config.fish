@@ -63,8 +63,6 @@ navi widget fish | source
 ##########################################
 #             spaceship                  #
 ##########################################
-set SPACEFISH_PACKAGE_SHOW false $SPACEFISH_PACKAGE_SHOW
-set SPACEFISH_NODE_SHOW false $SPACEFISH_NODE_SHOW
-
+starship init fish | source
 
 set TERM xterm
