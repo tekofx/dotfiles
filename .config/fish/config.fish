@@ -16,7 +16,6 @@ alias dc "/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME commit -m"
 alias dr "/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME remove" 
 alias dp "/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME push" 
 
-alias bat "batcat"
 alias gotop "gotop-brlin"
 
 # exa
@@ -25,8 +24,7 @@ alias ls "exa"
 
 # Kitty aliases
 alias icat "kitty +kitten icat"
-#alias ssh "TERM=xterm ssh"
-
+alias themes "kitty +kitten themes"
 
 ##########################################
 #              fzf setup                 #
