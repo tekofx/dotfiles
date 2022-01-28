@@ -123,8 +123,8 @@ spacing = 4
 
 [module/battery]
 type = internal/battery
-battery = BAT0
-adapter = ADP1
+battery = BAT1
+adapter = ACADs
 full-at = 98
 format-charging =  <label-charging>
 label-charging = %percentage:2%%
@@ -215,20 +215,20 @@ click-right = pavucontrol&
 
 [module/wlan]
 type = internal/network
-interface = wlan0
+interface = wlp7s0
 interval = 1.0
 
 
 format-connected = <label-connected>
 format-connected-padding = 0
-label-connected = %{A1:wifimenu:}w %essid%%{A}
+label-connected = %upspeed%|%downspeed% 
 label-connected-foreground = ${colors.background}
 label-connected-background = ${colors.green}
-label-connected-padding = 0
+label-connected-padding = 1
 
 format-disconnected = <label-disconnected>
 format-disconnected-padding = 0
-label-disconnected = %{A1:wifimenu:}y%{A}
+label-disconnected = Disconnected 
 label-disconnected-foreground = ${colors.background}
 label-disconnected-background = ${colors.green}
 label-disconnected-padding = 0
@@ -262,7 +262,7 @@ index-sort = true
 wrapping-scroll = false
 
 
-ws-icon-default = 
+ws-icon-default = ""
 
 
 fuzzy-match = true
