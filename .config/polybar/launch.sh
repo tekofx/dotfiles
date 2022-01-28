@@ -1,3 +1,3 @@
 #!/usr/bin/env sh
 killall polybar
-polybar example &
+polybar main &
