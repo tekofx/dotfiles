@@ -102,8 +102,6 @@ let g:coc_global_extensions = [
   \ 'coc-snippets',
   \ 'coc-actions',
   \ 'coc-sh',
-  \ 'coc-spell-checker',
-  \ 'coc-spell-prettier',
   \ 'coc-git',
   \ 'coc-pyright',
   \ 'coc-docker',
