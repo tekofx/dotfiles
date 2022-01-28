@@ -50,12 +50,12 @@ enable-ipc = true
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-font-0 = "Jetbrains Mono Nerd Font:style=Medium:size=10;2"
-font-1 = "Jetbrains Mono Nerd Font:style=Bold:size=24;4"
+font-0 = "Hack Nerd Font:style=Medium:size=10;2"
+font-1 = "Hack Nerd Font:style=Bold:size=24;4"
 
 tray-position = right 
 tray-background = ${colors.altblack}
-modules-left =  i3 bspw
+modules-left =  menu-apps i3 bspw
 modules-center =  
 modules-right =   battery pulseaudio filesystem memory wlan lan  date 
 
@@ -64,6 +64,28 @@ cursor-click = pointer
 [settings]
 screenchange-reload = true
 
+[module/menu-apps]
+type = custom/menu
+
+label-open = 
+label-close = 
+label-open-padding = 2
+label-close-padding = 2
+
+; If true, <label-toggle> will be to the left of the menu items (default).
+; If false, it will be on the right of all the items.
+expand-right = true
+
+; "menu-LEVEL-N" has the same properties as "label-NAME" with
+; the additional "exec" property
+;
+; Commands will be executed using "/bin/sh -c $COMMAND"
+
+menu-0-0 = " Firefox "
+menu-0-0-exec = firefox
+menu-0-1 = " Network "
+menu-0-1-exec = network-manager-applet
+
 [module/memory]
 type = internal/memory
 
@@ -71,7 +93,7 @@ type = internal/memory
 ; Default: 1
 interval = 3
 format = <label> 
-label = RAM %gb_free%/%gb_used%
+label = RAM %gb_used%/%gb_total%
 
 label-background=${colors.blue}
 label-foreground=${colors.background}
@@ -220,7 +242,7 @@ interval = 1.0
 
 format-connected = <label-connected>
 format-connected-padding = 0
-label-connected = ﯱ Connected
+label-connected = %upspeed% | %downspeed%
 label-connected-foreground = ${colors.background}
 label-connected-background = ${colors.green}
 label-connected-padding = 1
