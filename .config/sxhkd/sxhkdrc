@@ -130,4 +130,4 @@ super + {Left,Down,Up,Right}
 
 # Custom 
 alt + super + {Left, Down, Up, Right}
-/home/teko/.config/bspwm/scripts/bspwm_resize {west, south, north,east}
+	/home/teko/.config/bspwm/scripts/bspwm_resize {west, south, north,east}
