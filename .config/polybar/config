@@ -63,40 +63,9 @@ screenchange-reload = true
 
 
 
-[module/memory]
-type = internal/memory
 
-; Seconds to sleep between updates
-; Default: 1
-interval = 3
-format = <label> 
-label =  %percentage_used%%
 
-label-background=${colors.blue}
-label-foreground=${colors.background}
-label-padding=1
 
-[module/filesystem]
-type = internal/fs
-
-; Mountpoints to display
-mount-0 = /
-
-label-mounted=  %percentage_used%%
-label-mounted-background=${colors.cyan}
-label-mounted-foreground=${colors.background}
-label-mounted-padding=1
-; Seconds to sleep between updates
-; Default: 30
-interval = 10
-
-; Display fixed precision values
-; Default: false
-fixed-values = true
-
-; Spacing between entries
-; Default: 2
-spacing = 4
 
 
 

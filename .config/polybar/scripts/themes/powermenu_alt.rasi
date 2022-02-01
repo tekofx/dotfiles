@@ -10,10 +10,10 @@ configuration {
     fullscreen:                     false;
 	hide-scrollbar: 				true;
 	sidebar-mode: 					false;
-    location:                       7;
+    location:                       3;
 }
 
-@import "colors_dark.rasi"
+@import "colors.rasi"
 
 window {
     transparency:                   "real";
@@ -21,9 +21,9 @@ window {
     text-color:                     @foreground;
     border-radius:                  20px;
     height:                         27%;
-    width:                          17%;
-    x-offset:                       30;
-    y-offset:                       -90;
+    width:                          12%;
+    x-offset:                       -30;
+    y-offset:                       70;
 }
 
 prompt {
