@@ -6,7 +6,6 @@
 
 
 
-> Dotfiles for the software I use
 - Fish Shell
 - Kitty terminal
 - Dunst

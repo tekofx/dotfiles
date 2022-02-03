@@ -52,9 +52,7 @@ super + g
 ################# Volume control #################
 # Volume Control
 XF86AudioLowerVolume
-
 	amixer set Master on && amixer set Master 5%- && $HOME/.config/dunst/notify_volume_change.sh
-	
 XF86AudioRaiseVolume
 	amixer set Master on && amixer set Master 5%+ && $HOME/.config/dunst/notify_volume_change.sh
 XF86AudioMute
@@ -64,8 +62,8 @@ XF86AudioMute
 
 ################# state/flags #################
 # set the window state
-super + {t,shift + t,s,f}
-	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+super + {t,s,f}
+	bspc node -t {tiled,floating,fullscreen}
 
 # set the node flags
 super + ctrl + {m,x,y,z}
@@ -128,7 +126,7 @@ super + ctrl + shift + space
 
 ################# move/resize #################
 # move a floating window
-super + {Left,Down,Up,Right}
+super  + ctrl + shift +  {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
 # Resize a window 
