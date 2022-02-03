@@ -1,12 +1,25 @@
 # Dotfiles
+
+
+<img src="assets/pills1.png">
+<img src="assets/neovim.png">
+
+
+
 > Dotfiles for the software I use
+- Fish Shell
+- Kitty terminal
+- Dunst
+- Bspwm + sxhkd
+- Polybar
+- Neovim
+- Rofi
+- i3
 
-![Asset1](assets/asset1.png)
+# Window Manager Configs
+## Pills
+<img src="assets/pills1.png">
+<img src="assets/pills2.png">
+<img src="assets/pills3.png">
 
-## Usage
-Clone this repo and copy the configs you like:
-```
-git clone https://github.com/tekofx/dotfiles.git
-```
-
-For more info see the  [wiki](https://github.com/Tekofx/dotfiles/wiki)
+bspwm + polybar + dunst
