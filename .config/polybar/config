@@ -86,6 +86,7 @@ tray-position = center
 tray-maxsize = 25 # Icon size
 tray-background = 
 tray-padding = 5
+tray-offset-x=-10%
 
 [module/menu]
 type = custom/text
