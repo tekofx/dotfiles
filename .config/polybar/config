@@ -31,52 +31,213 @@ shade-3 = #787c99
 shade-4 = #CACACE
 shade-5 = #acb0d0
 
-[bar/workspaces]
-width = 20%
+[bar/top]
+# Size and location
 height = 30
-offset-y = 0
+offset-y = 0.5%
 top = true
-offset-x=40%
 
 override-redirect = false
 
-scroll-up = next
-scroll-down = prev
-
-background = ${colors.background}
+# Bar colors
+background = 
 foreground = ${colors.foreground}
 
+# Fonts
 font-0 = "Hack Nerd Font:style=Medium:size=10;2"
+font-1 = "Hack Nerd Font:style=Medium:size=20;5"
+font-2 = "Hack Nerd Font:style=Medium:size=2;5"
+font-3="Hack Nerd Font:style=Medium:size=15;3"
 
-modules-center =  bspwm  i3 
+# Modules
+module-margin=0
+modules-center = sep-l bspwm i3 sep-r 
+modules-right= sep-l storage sep-r sep-l memory sep-r sep-l battery sep-r sep-l pulseaudio sep-r sep-l date sep-r
+
+# Hide bar when fullscreen
+wm-restack = bspwm
 
 cursor-click = pointer
 
+[bar/left]
+width = 200
+height = 30
+offset-y = 0.5%
+top = true
+offset-x=0.5%
+override-redirect = false
+scroll-up = next
+
+wm-restack = bspwm
+module-margin=0
+background = 
+foreground = ${colors.foreground}
+# Fonts
+font-0 = "Hack Nerd Font:style=Medium:size=15;3"
+font-1 = "Hack Nerd Font:style=Medium:size=20;5"
+font-2 = "Hack Nerd Font:style=Medium:size=2;5"
+font-3="Hack Nerd Font:style=Medium:size=15;3"
+cursor-click = pointer
+
+modules-left=sep-l menu sep-r
+ 
+
+tray-position = center
+tray-maxsize = 25 # Icon size
+tray-background = 
+tray-padding = 5
+tray-offset-x=0%
+
+[module/menu]
+type = custom/text
+content = " "
+content-background=${colors.background}
+content-padding=0
+
+
+[module/pulseaudio]
+type = internal/pulseaudio
+use-ui-max = false
+
+format-volume = <ramp-volume><label-volume>
+
+format-volume-padding = 0
+format-volume-background=${colors.background}
+
+label-volume = "%percentage%%"
+label-volume-foreground = ${colors.foreground}
+label-volume-padding = 0
+
+ramp-volume-foreground=${colors.foreground}
+ramp-volume-0 = 奄
+ramp-volume-1 = 奔
+ramp-volume-2 = 墳
+ramp-volume-padding = 1
+
+format-muted-padding = 0
+label-muted ="婢"
+label-muted-background = ${colors.background}
+label-muted-padding = 0
+
+click-right = pavucontrol&
+
+[module/bspwm]
+type = internal/bspwm
+
+format = <label-state> <label-mode>
+format-background= ${colors.background}
+
+label-focused = 
+label-focused-foreground = ${colors.white}
+label-focused-padding = 1 
+
+label-occupied = 
+label-occupied-foreground = ${colors.shade-3}
+label-occupied-padding = 1 
+
+label-empty = 
+label-empty-foreground = ${colors.shade-1}
+label-empty-padding = 1
 radius-top=10.0
 radius-bottom=10.0
 
 
 
+[module/date]
+type = internal/date
+interval = 1
 
-[settings]
-screenchange-reload = true
+time = "%H:%M"
 
+format =  <label>
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+format-padding = 0
+label = %{T0}%time%%{T-}
+label-padding = 0
+padding-right=0
 
+[module/battery]
+type = internal/battery
+battery = BAT1
+adapter = ACADs
+full-at = 98
+format-charging =  <label-charging>
+label-charging = %percentage:2%%
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+format-charging-padding = 1
+format-charging-foreground = ${colors.foreground}
+format-charging-background = ${colors.background}
+format-discharging = <ramp-capacity> <label-discharging>
+label-discharging = %percentage%%
+format-discharging-foreground = ${colors.foreground}
+format-discharging-background = ${colors.background}
+format-full-prefix = "  "
+format-full-foreground = ${colors.foreground}
+format-full-background = ${colors.background}
+format-full-padding = 0
+ramp-capacity-0 = " "
+ramp-capacity-1 = " "
+ramp-capacity-2 = " "
+ramp-capacity-3 = " "
+ramp-capacity-4 = " "
+ramp-capacity-0-foreground = ${colors.red}
+#ramp-capacity-0-background = ${colors.background}
+animation-charging-framerate = 910
+format-discharging-padding = 0
 
-
-
-
-
-
-
-[module/margin]
+[module/sep-l]
 type = custom/text
-
-content = %{T0}%{T-}
+content = "%{T2}%{T-}"
 content-foreground = ${colors.background}
 
 
+[module/sep-r]
+type = custom/text
+content = "%{T2}%{T3} "
+content-foreground = ${colors.background}
 
+
+[module/memory]
+type = internal/memory
+
+; Seconds to sleep between updates
+; Default: 1
+interval = 3
+format = <label> 
+label =  %percentage_used%%
+
+label-background=${colors.background}
+label-foreground=${colors.foreground}
+label-padding=0
+
+[module/storage]
+type = internal/fs
+
+; Mountpoints to display
+mount-0 = /
+
+format-padding=0
+
+label-mounted=  %percentage_used%%
+label-mounted-background=${colors.background}
+label-mounted-foreground=${colors.foreground}
+label-mounted-padding=0
+; Seconds to sleep between updates
+; Default: 30
+interval = 10
+
+; Display fixed precision values
+; Default: false
+fixed-values = true
+
+; Spacing between entries
+; Default: 2
+spacing = 4
+
+[settings]
+screenchange-reload = true
 
 
 [module/wlan]
@@ -119,33 +280,3 @@ label-disconnected =  Disconnected
 label-disconnected-foreground = ${colors.background}
 label-disconnected-background = ${colors.green}
 label-disconnected-padding = 1
-
-
-[module/sep]
-type = custom/text
-content = -
-
-content-background = ${color.background}
-content-foreground = ${color.background}
-
-[module/dot]
-type = custom/text
-;content = 
-content = ""
-
-content-font = 6
-content-background = ${color.background}
-content-foreground = ${color.altblack}
-content-padding = 1
-
-[module/round-left]
-type = custom/text
-
-content = %{T2}%{T-}
-content-foreground = ${colors.altblue}
-
-[module/round-right]
-type = custom/text
-
-content = %{T2}%{T-}
-content-foreground = ${colors.altblue}
