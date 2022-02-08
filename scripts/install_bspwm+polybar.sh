@@ -5,6 +5,7 @@ cp ../.config/bspwm $HOME/.config/ -r
 cp ../.config/sxhkd $HOME/.config/ -r 
 cp ../.config/rofi $HOME/.config/ -r
 cp ../.config/dunst $HOME/.config/ -r
+cp ../.config/eww $HOME/.config/ -r
 
 
 # Config connection
