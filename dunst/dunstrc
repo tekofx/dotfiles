@@ -193,7 +193,7 @@
     min_icon_size = 0
 
     # Scale larger icons down to this size, set to 0 to disable
-    max_icon_size = 32
+    max_icon_size = 0
 
     # Paths to default icons.
     icon_path = /usr/share/icons/Adwaita/16x16/status/:/usr/share/icons/Adwaita/16x16/devices/:/usr/share/icons/Adwaita/16x16/legacy/
@@ -425,11 +425,6 @@
 #    appname = Pidgin
 #    summary = *says*
 #    urgency = critical
-#
-#[twitter]
-#    appname = Pidgin
-#    summary = *twitter.com*
-#    urgency = normal
 #
 #[stack-volumes]
 #    appname = "some_volume_notifiers"
