@@ -1,0 +1,88 @@
+* {
+  all: unset;
+}
+window {
+  font-family: "JetbrainsMono Nerd Font Mono";
+  border-radius: 10px;
+  background-color: #2E3440;
+}
+
+//------------------------------------------------------------------------------
+
+.square-button {
+  font-family: "JetbrainsMono Nerd Font Mono";
+  margin: 0px;
+  font-size: 25px;
+}
+
+.poweroff {
+  color: #BF616A;
+  margin-top: 7px;
+}
+
+.reboot {
+  color: #EBCB8B;
+  margin-top: 7px;
+
+}
+
+.logout {
+  color: #B48EAD;
+  margin-top: 7px;
+
+}
+
+.lock {
+  color: #8FBCBB;
+  margin-top: 7px;
+
+}
+
+//------------------------------------------------------------------------------
+.profile-picture {
+  margin: 10px;
+  margin-right: 0px;
+  margin-top: 25px;
+}
+
+.profile-info {
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-top: 15px;
+  margin-bottom: 25px;
+}
+
+.profile-name {
+  font-family: "JetbrainsMono Nerd Font Mono";
+  font-size: 25px;
+}
+
+.profile-username {
+  font-family: "JetbrainsMono Nerd Font Mono";
+  font-size: 20px;
+  color: #BF616A;
+}
+
+//------------------------------------------------------------------------------
+.hour-text {
+  font-family: "JetbrainsMono Nerd Font Mono";
+  font-size: 50px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color:#88C0D0;
+}
+
+.minute-text {
+  font-family: "JetbrainsMono Nerd Font Mono";
+  font-size: 50px;
+  margin-bottom: 10px;
+  color:#88C0D0;
+}
+
+//------------------------------------------------------------------------------
+.date-text {
+  font-family: "JetbrainsMono Nerd Font Mono";
+  font-size: 25px;
+  margin-top: 27px;
+  color: #EBCB8B;
+}
