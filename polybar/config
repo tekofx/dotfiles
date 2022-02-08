@@ -94,7 +94,7 @@ tray-offset-x=-10%
 
 [module/menu]
 type = custom/text
-content = %{A1:$HOME/.config/eww/profile.sh && $HOME/.config/eww/buttons.sh:}%{T5}%{T-}%{A}
+content = %{T5}%{A1:$HOME/.config/eww/profile.sh && $HOME/.config/eww/buttons.sh:}%{A}%{T-}
 content-background=${colors.background}
 content-padding=0
 
