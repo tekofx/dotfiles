@@ -53,13 +53,12 @@ font-3 = Hack Nerd Font Mono:style=Regular:size=5;5 # Separators space
 # Modules
 module-margin=0
 modules-center = sep-l bspwm i3 sep-r 
-modules-right= sep-l storage sep-r sep-l memory sep-r sep-l battery sep-r sep-l pulseaudio sep-r sep-l date sep-r
+modules-right= sep-l memory cpu sep-r sep-l storage battery sep-r sep-l pulseaudio sep-r sep-l date sep-r
 
 # Hide bar when fullscreen
 wm-restack = bspwm
 
 cursor-click = pointer
-
 
 [bar/left]
 width = 40%
@@ -81,16 +80,17 @@ font-2 = Hack Nerd Font Mono:style=Regular:size=20;5 # Separators
 font-3 = Hack Nerd Font Mono:style=Regular:size=5;5 # Separators space
 font-4 = JetBrainsMono Nerd Font Mono:style=Medium:size=20;4 # Menu icon
 
+
 cursor-click = pointer
 
 modules-left=sep-l menu sep-r sep-l lan wlan sep-r
+ 
 
 tray-position = center
 tray-maxsize = 25 # Icon size
 tray-background = 
 tray-padding = 5
 tray-offset-x=-10%
-
 
 [module/menu]
 type = custom/text
@@ -104,6 +104,7 @@ type = internal/pulseaudio
 use-ui-max = false
 
 format-volume = <ramp-volume><label-volume>
+
 format-volume-padding = 0
 format-volume-background=${colors.background}
 
@@ -111,14 +112,12 @@ label-volume = "%percentage%%"
 label-volume-foreground = ${colors.foreground}
 label-volume-padding = 0
 
-# ramp
 ramp-volume-foreground=${colors.foreground}
 ramp-volume-0 = "%{T2}奄%{T4} %{T-}"
 ramp-volume-1 = "%{T2}奔%{T4} %{T-}"
 ramp-volume-2 = "%{T2}墳%{T4} %{T-}"
 ramp-volume-padding = 0
 
-# Muted
 format-muted-padding = 0
 label-muted = %{T2}婢%{T-}
 label-muted-background = ${colors.background}
@@ -126,24 +125,23 @@ label-muted-padding = 0
 
 click-right = pavucontrol&
 
-
 [module/bspwm]
 type = internal/bspwm
 
 format = <label-state> <label-mode>
 format-background= ${colors.background}
 
-label-focused = "%{T4} %{T2}%{T4} %{T-}"
+label-focused = %{T2}%{T-}
 label-focused-foreground = ${colors.white}
-label-focused-padding = 0
+label-focused-padding = 1 
 
-label-occupied = "%{T4} %{T2}%{T4} %{T-}"
+label-occupied = %{T2}%{T-}
 label-occupied-foreground = ${colors.shade-3}
-label-occupied-padding = 0
+label-occupied-padding = 1 
 
-label-empty = "%{T4} %{T2}%{T4} %{T-}"
+label-empty = %{T2}%{T-}
 label-empty-foreground = ${colors.shade-1}
-label-empty-padding = 0
+label-empty-padding = 1
 radius-top=10.0
 radius-bottom=10.0
 
@@ -163,52 +161,57 @@ label = "%{T2}%{T4} %{T-}%time%"
 label-padding = 0
 padding-right= 0
 
-
 [module/battery]
 type = internal/battery
 battery = BAT1
 adapter = ACADs
-full-at = 100
+full-at = 98
+format-charging = %{T2}  <label-charging>
+label-charging = %percentage:2%%
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
-
-# Charging
-label-charging = %percentage%%
-format-charging = <animation-charging><label-charging>
-format-charging-padding = 0
-format-charging-background = ${colors.background}
+format-charging-padding = 1
 format-charging-foreground = ${colors.foreground}
-
-# Discharging
+format-charging-background = ${colors.background}
+format-discharging = <ramp-capacity> <label-discharging>
 label-discharging = %percentage%%
-format-discharging = <ramp-capacity><label-discharging>
 format-discharging-foreground = ${colors.foreground}
 format-discharging-background = ${colors.background}
-format-discharging-padding = 0
-
-# Full
-label-full="%{T1}%{T4} %{T-}%percentage%%"
+format-full-prefix = "%{T2}  %{T4} %{T-}"
 format-full-foreground = ${colors.foreground}
 format-full-background = ${colors.background}
 format-full-padding = 0
-
-# Ramp
-ramp-capacity-0 = "%{T1}%{T4} %{T-}"
-ramp-capacity-1 = "%{T1}%{T4} %{T-}"
-ramp-capacity-2 = "%{T1}%{T4} %{T-}"
-ramp-capacity-3 = "%{T1}%{T4} %{T-}"
-ramp-capacity-4 = "%{T1}%{T4} %{T-}"
-ramp-capacity-5 = "%{T1}%{T4} %{T-}"
-ramp-capacity-6 = "%{T1}%{T4} %{T-}"
-ramp-capacity-7 = "%{T1}%{T4} %{T-}"
-ramp-capacity-8 = "%{T1}%{T4} %{T-}"
+ramp-capacity-0 = "%{T2}  %{T4} %{T-}"
+ramp-capacity-1 = "%{T2}  %{T4} %{T-}"
+ramp-capacity-2 = "%{T2}  %{T4} %{T-}"
+ramp-capacity-3 = "%{T2}  %{T4} %{T-}"
+ramp-capacity-4 = "%{T2}  %{T4} %{T-}"
 ramp-capacity-0-foreground = ${colors.red}
+#ramp-capacity-0-background = ${colors.background}
 animation-charging-framerate = 910
+format-discharging-padding = 0
 
-# animation
-animation-charging-0="%{T2}%{T4} %{T-}"
-animation-charging-1="%{T2}%{T4} %{T-}"
-animation-charging-2="%{T2}%{T4} %{T-}"
+
+
+[module/cpu]
+type = internal/cpu
+
+; Seconds to sleep between updates
+; Default: 1
+interval = 0.5
+
+format = <label>
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+
+; Available tokens:
+;   %percentage% (default) - total cpu load averaged over all cores
+;   %percentage-sum% - Cumulative load on all cores
+;   %percentage-cores% - load percentage for each core
+;   %percentage-core[1-9]% - load percentage for specific core
+label = "%{T2} %{T4} %{T-}%percentage%%"
+
+
 
 
 [module/memory]
@@ -223,7 +226,6 @@ label = "%{T2}%{T4} %{T-}%percentage_used%%"
 label-background=${colors.background}
 label-foreground=${colors.foreground}
 label-padding=0
-
 
 [module/storage]
 type = internal/fs
@@ -249,7 +251,6 @@ fixed-values = true
 ; Default: 2
 spacing = 4
 
-
 [settings]
 screenchange-reload = true
 
@@ -258,6 +259,7 @@ screenchange-reload = true
 type = internal/network
 interface = wlp7s0
 interval = 1.0
+
 
 format-connected = <label-connected>
 format-connected-padding = 0
@@ -279,7 +281,6 @@ type = internal/network
 interface = enp0s3
 interval = 1.0
 
-# Connected
 format-connected = <label-connected>
 format-connected-padding = 0
 label-connected = "%{T2}ﯱ%{T4} %{T-}%local_ip%"
@@ -287,14 +288,12 @@ label-connected-foreground = ${colors.foreground}
 label-connected-background = ${colors.background}
 label-connected-padding = 0
 
-# Disconnected
 format-disconnected = <label-disconnected>
 format-disconnected-padding = 0
 label-disconnected = "%{T2}%{T4} %{T-}Disconnected"
 label-disconnected-foreground = ${colors.foreground}
 label-disconnected-background = ${colors.background}
 label-disconnected-padding = 0
-
 
 [module/sep-l]
 type = custom/text
