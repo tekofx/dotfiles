@@ -53,7 +53,7 @@ font-3 = Hack Nerd Font Mono:style=Regular:size=5;5 # Separators space
 # Modules
 module-margin=0
 modules-center = sep-l bspwm i3 sep-r 
-modules-right= sep-l memory cpu sep-r sep-l storage battery sep-r sep-l pulseaudio sep-r sep-l date sep-r
+modules-right= sep-l cpu memory sep-r sep-l storage battery sep-r sep-l pulseaudio sep-r sep-l date sep-r
 
 # Hide bar when fullscreen
 wm-restack = bspwm
@@ -215,7 +215,7 @@ format-background = ${colors.background}
 ;   %percentage-sum% - Cumulative load on all cores
 ;   %percentage-cores% - load percentage for each core
 ;   %percentage-core[1-9]% - load percentage for specific core
-label = "%{T2} %{T4} %{T-}%percentage%%"
+label = "%{T2}%{T4} %{T-}%percentage%%"
 
 
 
@@ -227,7 +227,7 @@ type = internal/memory
 ; Default: 1
 interval = 3
 format = <label> 
-label = "%{T2}%{T4} %{T-}%percentage_used%%"
+label = "%{T2} %{T4} %{T-}%percentage_used%%"
 
 label-background=${colors.background}
 label-foreground=${colors.foreground}
