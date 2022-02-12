@@ -166,27 +166,28 @@ type = internal/battery
 battery = BAT1
 adapter = ACADs
 full-at = 98
-
-
-format-charging = %{T2}  <label-charging>
-label-charging = %percentage:2%%
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
+
+# Charging
+format-charging = <animation-charging><label-charging>
+label-charging = %percentage:2%%
 format-charging-padding = 0
 format-charging-foreground = ${colors.foreground}
 format-charging-background = ${colors.background}
+animation-charging-0 = "%{T2} %{T4} %{T-}"
+animation-charging-1 = "%{T2} %{T4} %{T-}"
+animation-charging-2 = "%{T2} %{T4} %{T-}"
+animation-charging-3 = "%{T2} %{T4} %{T-}"
+animation-charging-4 = "%{T2} %{T4} %{T-}"
+; Framerate in milliseconds
+animation-charging-framerate = 750
 
-
+# Discharging
 format-discharging = <ramp-capacity><label-discharging>
 label-discharging = %percentage%%
 format-discharging-foreground = ${colors.foreground}
 format-discharging-background = ${colors.background}
-
-
-format-full-prefix = "%{T1} %{T-}"
-format-full-foreground = ${colors.foreground}
-format-full-background = ${colors.background}
-format-full-padding = 0
 ramp-capacity-0 = "%{T1} %{T4} %{T-}"
 ramp-capacity-1 = "%{T1} %{T4} %{T-}"
 ramp-capacity-2 = "%{T1} %{T4} %{T-}"
@@ -198,9 +199,12 @@ ramp-capacity-7 = "%{T1} %{T4} %{T-}"
 ramp-capacity-8 = "%{T1} %{T4} %{T-}"
 ramp-capacity-0-foreground = ${colors.red}
 #ramp-capacity-0-background = ${colors.background}
-animation-charging-framerate = 910
 format-discharging-padding = 0
 
+format-full-prefix = "%{T1} %{T-}"
+format-full-foreground = ${colors.foreground}
+format-full-background = ${colors.background}
+format-full-padding = 0
 
 
 [module/cpu]
