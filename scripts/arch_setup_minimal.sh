@@ -10,7 +10,7 @@ rm $HOME/.fzf/ -dfr
 
 # Install needed packages
 sudo pacman -S yay --noconfirm
-yay -S exa lazydocker docker docker-compose fish navi duf ncdu neofetch neovim btop zip unzip --noconfirm
+yay -S exa lazydocker docker docker-compose fish navi duf ncdu neofetch neovim btop zip unzip htop --noconfirm
 
 # Add cheats to navi
 navi repo add https://github.com/Tekofx/navi-cheats.git
