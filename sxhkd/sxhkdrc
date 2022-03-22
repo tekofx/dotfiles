@@ -58,7 +58,12 @@ XF86AudioRaiseVolume
 XF86AudioMute
   	amixer set Master toggle
 
+################ Brigthness Control #############
+XF86MonBrightnessDown
+  brightnessctl set 5%-
 
+XF86MonBrightnessUp
+  brightnessctl set +5%
 
 ################# state/flags #################
 # set the window state
