@@ -8,16 +8,6 @@ alias gs "git status"
 alias gp "git push"
 alias gc "git commit -m"
 
-# dotfiles
-alias dot "/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME"
-alias ds "/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME status"
-alias da "/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME add" 
-alias dc "/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME commit -m" 
-alias dr "/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME remove" 
-alias dp "/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME push" 
-
-alias gotop "gotop-brlin"
-
 # exa
 alias tree "exa -T"
 alias ls "exa"
@@ -25,6 +15,10 @@ alias ls "exa"
 # Kitty aliases
 alias icat "kitty +kitten icat"
 alias themes "kitty +kitten themes"
+
+# Docker aliases
+alias bots "docker-compose -f ~/bots/docker-compose.yml"
+alias web "docker-compose -f ~/webserver/docker-compose.yml"
 
 ##########################################
 #              fzf setup                 #
@@ -64,3 +58,10 @@ navi widget fish | source
 starship init fish | source
 
 set TERM xterm
+##########################################
+#               tere                     #
+##########################################
+function tere
+    set --local result (command tere $argv)
+    [ -n "$result" ] && cd -- "$result"
+end
