@@ -67,3 +67,4 @@ function tere
 end
 
 export VISUAL="micro"
+export EDITOR="micro"
