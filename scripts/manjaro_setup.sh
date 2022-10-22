@@ -6,7 +6,6 @@ sudo pacman-mirrors --fasttrack && sudo pacman -Syu
 # Install fzf
 git clone --depth 1 https://github.com/junegunn/fzf.git $HOME/.fzf
 $HOME/.fzf/install
-rm $HOME/.fzf/ -dfr
 
 # Install needed packages
 sudo pacman -S yay --noconfirm
