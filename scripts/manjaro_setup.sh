@@ -26,10 +26,8 @@ read answer
 
 if [ "$answer" != "${answer#[Yy]}" ] ;then 
     echo Installing desktop utilites
-    yay -S kitty tdrop tmux--noconfirm
+    yay -S kitty --noconfirm
     cp ../kitty $HOME/.config/ -r
-    echo "If you would like to have a dropdown terminal create a keybinding with the command:"
-    echo "tdrop -ma -w -4 -y 0 -s dropdown kitty"
 else
     echo No
 fi
