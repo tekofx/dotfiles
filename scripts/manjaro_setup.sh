@@ -1,7 +1,7 @@
 # Setup a new arch based installation
 
 # Update packages
-sudo pacman -Syu --noconfirm
+sudo pacman-mirrors --fasttrack && sudo pacman -Syu
 
 # Install fzf
 git clone --depth 1 https://github.com/junegunn/fzf.git $HOME/.fzf
