@@ -9,7 +9,7 @@ $HOME/.fzf/install
 
 # Install needed packages
 sudo pacman -S yay --noconfirm
-yay -S exa lazydocker docker docker-compose fish navi duf ncdu neofetch neovim btop zip unzip htop tere dua-cli micro gitui --noconfirm
+yay -S base-devel exa lazydocker docker docker-compose fish navi duf ncdu neofetch neovim btop zip unzip htop tere dua-cli micro gitui --noconfirm
 
 # Add cheats to navi
 navi repo add https://github.com/Tekofx/navi-cheats.git
@@ -26,9 +26,10 @@ read answer
 
 if [ "$answer" != "${answer#[Yy]}" ] ;then 
     echo Installing desktop utilites
-    yay -S kitty --noconfirm
+    yay -S kitty tdrop tmux--noconfirm
     cp ../kitty $HOME/.config/ -r
-    
+    echo "If you would like to have a dropdown terminal create a keybinding with the command:"
+    echo "tdrop -ma -w -4 -y 0 -s dropdown kitty"
 else
     echo No
 fi
