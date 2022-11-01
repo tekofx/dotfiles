@@ -11,6 +11,9 @@ We will use wacom utility
 
 `yay -S xf86-input-wacom`
 
+
+If the Desktop Environment is KDE, all can be set up in settings, if not continue:
+
 First list the devices and look for a device with "Pad pad" in its name
 
 `xsetwacom --list devices`
