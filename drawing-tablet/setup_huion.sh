@@ -1,5 +1,5 @@
 #!/bin/bash
-stylus_id=9
+stylus_id=$(xsetwacom --list devices | grep stylus | awk -F ' ' '{print $5}')
 screen=HDMI-0
 tablet_name='HID 256c:006d Pad pad'
 stylus_name='HID 256c:006d stylus'
