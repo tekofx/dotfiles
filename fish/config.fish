@@ -70,3 +70,5 @@ export VISUAL="micro"
 export EDITOR="micro"
 set fish_greeting 
 zoxide init fish | source
+
+neofetch
