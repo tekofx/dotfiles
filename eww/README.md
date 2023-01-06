@@ -1,0 +1,1 @@
+yay -S eww-wayland wireless_tools pulsemixer 
