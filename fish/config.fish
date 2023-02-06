@@ -20,6 +20,7 @@ alias themes "kitty +kitten themes"
 alias bots "docker-compose -f ~/bots/docker-compose.yml"
 alias web "docker-compose -f ~/webserver/docker-compose.yml"
 alias dc "docker-compose"
+alias d "docker"
 
 ##########################################
 #              fzf setup                 #
