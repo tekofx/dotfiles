@@ -2,7 +2,6 @@
 #                 Aliases                #
 ##########################################
 
-
 # git
 alias gs "git status"
 alias gp "git push"
@@ -21,6 +20,13 @@ alias bots "docker-compose -f ~/bots/docker-compose.yml"
 alias web "docker-compose -f ~/webserver/docker-compose.yml"
 alias dc "docker-compose"
 alias d "docker"
+
+# Forgit
+alias ga "forgit add"
+alias glo "forgit log"
+alias gi "forgit ignore"
+alias gd "forgit diff"
+
 
 ##########################################
 #              fzf setup                 #
@@ -48,6 +54,7 @@ set PATH /usr/sbin/ $PATH
 set PATH ~/.local/bin $PATH 
 set PATH ~/.cargo/bin/ $PATH
 set PATH /usr/local/bin/ $PATH
+set PATH /home/teko/.spicetify/ $PATH
 
 ##########################################
 #              navi                      #
@@ -60,17 +67,9 @@ navi widget fish | source
 starship init fish | source
 
 set TERM xterm
-##########################################
-#               tere                     #
-##########################################
-function tere
-    set --local result (command tere $argv)
-    [ -n "$result" ] && cd -- "$result"
-end
 
 export VISUAL="micro"
 export EDITOR="micro"
 set fish_greeting 
 zoxide init fish | source
 
-neofetch
