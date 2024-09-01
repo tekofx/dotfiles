@@ -26,6 +26,7 @@ alias ga "git-forgit add"
 alias glo "git-forgit log"
 alias gi "git-forgit ignore"
 alias gd "git-forgit diff"
+alias gcb "git-forgit checkout_branch"
 
 
 ##########################################
