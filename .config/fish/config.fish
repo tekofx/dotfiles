@@ -22,10 +22,11 @@ alias dc "docker-compose"
 alias d "docker"
 
 # Forgit
-alias ga "forgit add"
-alias glo "forgit log"
-alias gi "forgit ignore"
-alias gd "forgit diff"
+alias ga "git-forgit add"
+alias glo "git-forgit log"
+alias gi "git-forgit ignore"
+alias gd "git-forgit diff"
+alias gcb "git-forgit checkout_branch"
 
 
 ##########################################
