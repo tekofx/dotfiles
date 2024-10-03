@@ -73,3 +73,4 @@ export EDITOR="micro"
 set fish_greeting 
 zoxide init fish | source
 
+set EDITOR micro
