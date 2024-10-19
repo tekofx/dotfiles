@@ -44,7 +44,8 @@ export FZF_DEFAULT_OPTS="
 --bind='alt-s:preview-page-down'
 --preview 'bat --color=always --style=header,grid --line-range :300 {}'
 "
-
+# Set up fzf key bindings
+fzf --fish | source
 
 ##########################################
 #              PATH                      #             
