@@ -77,17 +77,33 @@
 
 # Commands to run before anything
 [pre_commands]
+"Setup" = """
+flatpak info com.spotify.Client -c > /tmp/spotify_version_before.txt
+"""
+
 # "Emacs Snapshot" = "rm -rf ~/.emacs.d/elpa.bak && cp -rl ~/.emacs.d/elpa ~/.emacs.d/elpa.bak"
 
 
 # Commands to run after anything
 [post_commands]
 # "Emacs Snapshot" = "rm -rf ~/.emacs.d/elpa.bak && cp -rl ~/.emacs.d/elpa ~/.emacs.d/elpa.bak"
+"Cleanup" = "rm -f /tmp/spotify_version_before.txt /tmp/spotify_version_after.txt"
 
 
 # Custom commands
 [commands]
-"Patch Spotify" = "-i curl -sSL https://spotx-official.github.io/run.sh | bash"
+#"Patch Spotify" = "-i curl -sSL https://spotx-official.github.io/run.sh | bash"
+"Patch Spotify Test" = """
+flatpak info com.spotify.Client -c > /tmp/spotify_version_after.txt
+bash -c '
+if ! cmp -s /tmp/spotify_version_before.txt /tmp/spotify_version_after.txt; then
+    echo "Spotify has been upgraded. Running the patch command...";
+    curl -sSL https://spotx-official.github.io/run.sh | sh
+else
+    echo "Spotify version has not changed.";
+fi
+'
+"""
 # "Python Environment" = "~/dev/.env/bin/pip install -i https://pypi.python.org/simple -U --upgrade-strategy eager jupyter"
 # "Custom command using interactive shell (unix)" = "-i vim_upgrade"
 [python]
