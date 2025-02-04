@@ -93,7 +93,7 @@ flatpak info com.spotify.Client -c > /tmp/spotify_version_before.txt
 # Custom commands
 [commands]
 #"Patch Spotify" = "-i curl -sSL https://spotx-official.github.io/run.sh | bash"
-"Patch Spotify Test" = """
+"Patch Spotify" = """
 flatpak info com.spotify.Client -c > /tmp/spotify_version_after.txt
 bash -c '
 if ! cmp -s /tmp/spotify_version_before.txt /tmp/spotify_version_after.txt; then
