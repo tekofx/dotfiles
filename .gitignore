@@ -36,7 +36,6 @@ bin/
 .config/Google Play Music Desktop Player/
 .config/qtile/settings/__pycache*
 .config/nvim/plugged/
-.config/fish/completions
 .config/fish/functions
 202*.png
 avatar.jpg
