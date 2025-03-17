@@ -2,42 +2,53 @@
 
 
 (defpoll time :interval "20s"
-`date +" %a %b %d %I:%M %p"`)
+`date +"%H:%M"`)
 
 (defpoll battery :interval "30s"
-`/home/$USER/.config/eww/Scripts/battery.py`)
+`/home/$USER/.config/eww/scripts/battery`)
 
 (defpoll volume :interval "1s"
-`/home/$USER/.config/eww/Scripts/volume.py`)
+`/home/$USER/.config/eww/scripts/volume`)
 
 (defpoll wifi :interval "3s"
-`/home/$USER/.config/eww/Scripts/wifi.py`)
+`/home/$USER/.config/eww/scripts/wifi`)
 
-(deflisten workspaces :initial "(box (label :text \"                   \" ))"
-`/home/$USER/.config/eww/Scripts/workspaces.py`)
+
+(deflisten workspaces :initial "[]" "bash ~/.config/eww/scripts/get-workspaces")
+(deflisten current_workspace :initial "1" "bash ~/.config/eww/scripts/get-active-workspace")
 
 
 (defwindow bar
   :monitor 0
   :windowtype "dock"
   :geometry (geometry
-    :width "100%"
-    :height "1%"
+    :width "1920px"
+    :height "30px"
     :anchor "top center"
   )
   :exclusive true
   
   (box :class "main-container"
     
-    (box :class "workspaces" :halign "start"
-      (literal :content "${workspaces}")
+    (eventbox :onscroll "bash ~/.config/eww/scripts/change-active-workspace {} ${current_workspace}" :class "workspaces-widget"
+      (box :class "workspaces" :halign "start" :space-evenly false
+        (label :text "${workspaces}${current_workspace}" :visible false)
+        (for workspace in workspaces
+          (eventbox :onclick "hyprctl dispatch workspace ${workspace.id}"
+            (box :class "workspace-entry ${workspace.windows > 0 ? 'occupied' : 'empty'} workspace-entry ${workspace.id == current_workspace ? 'current' : ''}"
+              (label :text "${workspace.id}" )
+            )
+          )
+        )
+      )
     )
     
-    (box :halign "end"
+    (box :halign "end" :space-evenly "false"
       
-      (box :class "wifi" "${wifi}")
-      (box :class "battery" "${volume}")
-      (box :class "battery" "${battery}")
+      (box :class "tray_element" "${wifi}")
+      (box :class "tray_element" "${volume}")
+      (box :class "tray_element" "${battery}")
+      (box :class "tray_element" "${time}")
       
     )
     

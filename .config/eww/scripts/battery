@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# Battery status icons
+bat_status_arr=("󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹")
+charging_status_arr=("󰢝" "󰂆" "󰂇" "󰂈" "󰂉" "󰂊" "󰂋" "󰂊" "󰂋" "󰂅") # Icons for charging
+
+# Function to get battery data
+get_bat_data() {
+    battery_info=$(upower -i $(upower -e | grep 'BAT'))
+    status=$(echo "$battery_info" | grep "state" | awk '{print $2}')
+    percentage=$(echo "$battery_info" | grep "percentage" | awk '{print $2}' | tr -d '%')
+
+    # Determine the icon based on the percentage
+    index=$((percentage / 10))
+    if [ "$status" == "charging" ]; then
+        icon=${charging_status_arr[index]}
+    else
+        icon=${bat_status_arr[index]}
+    fi
+
+    echo "$status $percentage $icon"
+}
+
+# Function to format the battery output
+format_battery() {
+    read -r status percentage icon <<< $(get_bat_data)
+    echo "$icon  $percentage%"
+}
+
+# Print the formatted battery information
+format_battery

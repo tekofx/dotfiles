@@ -1,63 +1,54 @@
-$bg: rgba(#ffffff,0.1);
+$bg: rgba(#ffffff, 0.1);
 $fg: #dddddd;
-$shadow: rgba(#000000,0.3);
-$border_col: rgba(#cccccc,0.18);
-$best_so_far: rgba(255,255,255,0.1); 
+$shadow: rgba(#000000, 0.3);
+$border_col: rgba(#cccccc, 0.18);
+$best_so_far: rgba(255, 255, 255, 0.1);
 
 .bar {
-	background-color: transparent;	
+	background-color: transparent;
+}
+
+.workspace-entry {
+	font-size: medium;
+	border-radius: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.workspace-entry.occupied {
+	background-color: rgba(#ffffff, 0.4);
+	color: #000000;
+}
+
+.workspace-entry.current {
+	background-color: #ffffff;
+	color: #000000;
 }
 
 .main-container {
-    margin-top:8px;
-    margin-left: 8px;
-    margin-bottom: 0px;
-    margin-right: 12px;
+	margin-top: 10px;
+	margin-left: 10px;
+	margin-bottom: 0px;
+	margin-right: 10px;
 }
 
 .workspaces {
 	background-color: $bg;
 	border-radius: 10px;
-	color: $fg;	
-	border: 1px solid $border_col;
-	
-    margin-bottom: 10px;
-    padding-right: 10px;
-    padding-left: 10px;
-    padding-top: 2px;
-
-    font-size: 20px;
-	box-shadow: 2px 2px 2px $shadow;
-}
-
-.battery{
-    background: $bg;
-	border-radius: 10px;
 	color: $fg;
-	font-size: 16px;
-	margin-bottom: 10px;
 	border: 1px solid $border_col;
-	box-shadow: 2px 2px 2px $shadow;
-	text-shadow: none;
-    margin-left: 20px;
-}
 
-.wifi{
-    background: $bg;
-	border-radius: 10px;
-	color: $fg;
-	font-size: 16px;
 	margin-bottom: 10px;
-	border: 1px solid $border_col;
+	padding-right: 0px;
+	padding-left: 0px;
+	padding-top: 2px;
+
+	font-size: 10px;
 	box-shadow: 2px 2px 2px $shadow;
-	text-shadow: none;
-    margin-left: 20px;
-    padding-left: 5px;
-    padding-right: 5px;
 }
 
 
-.time_battery {
+.tray_element {
 	background: $bg;
 	border-radius: 10px;
 	color: $fg;
@@ -66,8 +57,7 @@ $best_so_far: rgba(255,255,255,0.1);
 	border: 1px solid $border_col;
 	box-shadow: 2px 2px 2px $shadow;
 	text-shadow: none;
-}
-
-.time_battery:hover {
-    background: rgba(#ffffff,0.15);
+	margin-left: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
 }
