@@ -22,6 +22,14 @@ fi
 if eww active-windows | grep "brightness-widget"; then
     # If it's open, refresh the widget
     /home/$USER/.config/eww/scripts/brightness
+
+    # While current brightness is different to the new brightness, sleep 1 second
+    while [ "$current_brightness" != "$(brightnessctl g)" ]; do
+        sleep 5
+        current_brightness=$(brightnessctl g)
+    done
+
+    eww close brightness-widget
     
 else
     # If it's not open, open the widget
@@ -30,11 +38,5 @@ else
 fi
 
 
-# While current brightness is different to the new brightness, sleep 1 second
-while [ "$current_brightness" != "$(brightnessctl g)" ]; do
-    sleep 2
-    current_brightness=$(brightnessctl g)
-done
 
-eww close brightness-widget
 

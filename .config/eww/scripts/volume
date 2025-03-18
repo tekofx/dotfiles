@@ -6,7 +6,7 @@ muted_icon=""
 
 # Get the current mute status and volume percentage
 mute_status=$(pactl get-sink-mute @DEFAULT_SINK@ | awk '{print $2}')
-volume=$(pactl get-sink-volume @DEFAULT_SINK@ | grep -o '[0-9]*%' | head -n 1)
+volume=$(pactl get-sink-volume @DEFAULT_SINK@ | grep -o '[0-9]*%' | head -n 1 | tr -d '%')
 
 # Check if the volume is muted
 if [ "$mute_status" == "no" ]; then
@@ -14,3 +14,7 @@ if [ "$mute_status" == "no" ]; then
 else
     echo "$muted_icon"
 fi
+
+
+eww update current-volume="$unmuted_icon  $volume%"
+eww update volume-value=$volume

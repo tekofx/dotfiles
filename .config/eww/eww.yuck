@@ -4,8 +4,6 @@
 (defpoll battery :interval "30s"
 `/home/$USER/.config/eww/scripts/battery`)
 
-(defpoll volume :interval "1s"
-`/home/$USER/.config/eww/scripts/volume`)
 
 (defpoll wifi :interval "3s"
 `/home/$USER/.config/eww/scripts/wifi`)
@@ -14,7 +12,8 @@
 (deflisten workspaces :initial "[]" "bash ~/.config/eww/scripts/get-workspaces")
 (deflisten current_workspace :initial "1" "bash ~/.config/eww/scripts/get-active-workspace")
 
-(defvar current-brightness "initial value")
+(defvar current-brightness "󰃠  0%")
+(defvar current-volume "  0%")
 
 (defwindow bar
   :monitor 0
@@ -44,7 +43,7 @@
       
       (systray :class "tray_element")
       (box :class "tray_element" "${wifi}")
-      (box :class "tray_element" "${volume}")
+      (box :class "tray_element" "${current-volume}")
       (box :class "tray_element" "${current-brightness}")
       (box :class "tray_element" "${battery}")
       (box :class "tray_element" "${time}")
@@ -95,12 +94,11 @@
   )
   
   (box
-    (box :halign "center" :space-evenly "false"
-      (label :text "${current-brightness}")
-    )
-    (progress :value "${brightness-value}")
+    (label :text "${current-brightness}")
   )
 )
+
+(defvar volume-value "0")
 
 (defwindow volume-widget
   :monitor 0
@@ -111,7 +109,7 @@
   
   (box
     (box :halign "center" :space-evenly "false"
-      (label :text "${volume}")
+      (label :text "${current-volume}")
     )
   )
 )

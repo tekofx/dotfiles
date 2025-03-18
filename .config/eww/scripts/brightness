@@ -12,5 +12,4 @@ current_brightness_percentage=$(get_brightness_percentage)
 
 # Output the brightness percentage
 eww update current-brightness="$brightness_icon  $current_brightness_percentage%"
-
 eww update brightness-value=$(get_brightness_percentage)
