@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Check if an argument is provided
+if [ "$1" == "increase" ]; then
+    wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+
+elif [ "$1" == "decrease" ]; then
+    wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+else
+    echo "Usage: $0 [increase|decrease]"
+    exit 1
+fi
+
+
+# Open the widget
+eww open volume-widget
+# Wait for 1 second
+sleep 2
+# Close the widget
+eww close volume-widget

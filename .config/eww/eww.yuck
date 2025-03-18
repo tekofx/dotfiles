@@ -1,8 +1,5 @@
-(defvar home_dir "/home/$USER/.config/eww/Scripts")
-
-
 (defpoll time :interval "20s"
-`date +"%H:%M"`)
+`/home/$USER/.config/eww/scripts/time`)
 
 (defpoll battery :interval "30s"
 `/home/$USER/.config/eww/scripts/battery`)
@@ -17,6 +14,7 @@
 (deflisten workspaces :initial "[]" "bash ~/.config/eww/scripts/get-workspaces")
 (deflisten current_workspace :initial "1" "bash ~/.config/eww/scripts/get-active-workspace")
 
+(defvar current-brightness "initial value")
 
 (defwindow bar
   :monitor 0
@@ -32,7 +30,6 @@
     
     (eventbox :onscroll "bash ~/.config/eww/scripts/change-active-workspace {} ${current_workspace}" :class "workspaces-widget"
       (box :class "workspaces" :halign "start" :space-evenly false
-        (label :text "${workspaces}${current_workspace}" :visible false)
         (for workspace in workspaces
           (eventbox :onclick "hyprctl dispatch workspace ${workspace.id}"
             (box :class "workspace-entry ${workspace.windows > 0 ? 'occupied' : 'empty'} workspace-entry ${workspace.id == current_workspace ? 'current' : ''}"
@@ -45,14 +42,76 @@
     
     (box :halign "end" :space-evenly "false"
       
+      (systray :class "tray_element")
       (box :class "tray_element" "${wifi}")
       (box :class "tray_element" "${volume}")
+      (box :class "tray_element" "${current-brightness}")
       (box :class "tray_element" "${battery}")
       (box :class "tray_element" "${time}")
       
     )
     
     
+    
+    
   )
 )
 
+
+(defwindow info
+  
+  :monitor 0
+  :windowtype "normal"
+  :geometry (geometry
+    :width "60%"
+    :height "40%"
+    :anchor "center"
+  )
+  
+  (box :class "main-container"
+    
+    (button :onclick "eww close info" :class "close-button" "X")
+    
+    (box :halign "start" :space-evenly "false"
+      (label :class "info" "This is a test")
+    )
+    
+    (box :halign "end" :space-evenly "false"
+      (label :class "info" "This is a test")
+    )
+  )
+)
+
+
+
+(defvar brightness-value "0")
+
+
+(defwindow brightness-widget
+  :monitor 0
+  :windowtype "normal"
+  :geometry (geometry
+    :anchor "center"
+  )
+  
+  (box
+    (box :halign "center" :space-evenly "false"
+      (label :text "${current-brightness}")
+    )
+    (progress :value "${brightness-value}")
+  )
+)
+
+(defwindow volume-widget
+  :monitor 0
+  :windowtype "normal"
+  :geometry (geometry
+    :anchor "center"
+  )
+  
+  (box
+    (box :halign "center" :space-evenly "false"
+      (label :text "${volume}")
+    )
+  )
+)

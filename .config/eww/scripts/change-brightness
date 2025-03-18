@@ -1,0 +1,40 @@
+#!/bin/bash
+
+get_brightness_percentage() {
+    local brightness=$(brightnessctl get)
+    local max_brightness=$(brightnessctl max)
+    echo $((brightness * 100 / max_brightness))
+}
+
+current_brightness=$(brightnessctl g)
+
+
+# Check if an argument is provided
+if [ "$1" == "increase" ]; then
+    brightnessctl s 10%+
+elif [ "$1" == "decrease" ]; then
+    brightnessctl s 10%-
+else
+    echo "Usage: $0 [increase|decrease]"
+    exit 1
+fi
+
+if eww active-windows | grep "brightness-widget"; then
+    # If it's open, refresh the widget
+    /home/$USER/.config/eww/scripts/brightness
+    
+else
+    # If it's not open, open the widget
+    /home/$USER/.config/eww/scripts/brightness
+    eww open brightness-widget
+fi
+
+
+# While current brightness is different to the new brightness, sleep 1 second
+while [ "$current_brightness" != "$(brightnessctl g)" ]; do
+    sleep 2
+    current_brightness=$(brightnessctl g)
+done
+
+eww close brightness-widget
+

@@ -1,0 +1,33 @@
+#!/bin/bash
+
+# Define icons for specific applications
+declare -A app_icons=(
+    ["kitty"]=""       # Terminal icon
+    ["code"]=""       # VS Code icon
+    ["zen"]=""        # Browser icon
+)
+
+# Default icon for unknown applications
+default_icon=""
+
+# Fetch workspace information using hyprctl
+workspaces=$(hyprctl clients -j | jq -c '.[] | {workspace: .workspace.id, app: .class}')
+
+# Initialize output
+output=""
+
+# Process each workspace
+while IFS= read -r workspace; do
+    # Extract workspace ID and app class
+    workspace_id=$(echo "$workspace" | jq -r '.workspace')
+    app_class=$(echo "$workspace" | jq -r '.app' | tr '[:upper:]' '[:lower:]')
+
+    # Determine the icon for the app
+    icon=${app_icons[$app_class]:-$default_icon}
+
+    # Append to output
+    output+="Workspace $workspace_id: $icon  "
+done <<< "$workspaces"
+
+# Print the output for the Eww bar
+echo "$output"

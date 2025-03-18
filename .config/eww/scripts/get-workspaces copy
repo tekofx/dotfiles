@@ -1,0 +1,52 @@
+#!/usr/bin/env bash
+
+# Define icons for specific applications
+declare -A app_icons=(
+  ["kitty"]=""       # Terminal icon
+  ["code"]=""       # VS Code icon
+  ["zen"]=""        # Browser icon
+)
+
+# Default icon for unknown applications
+default_icon=""
+
+spaces() {
+  # Fetch workspace and client information
+  workspace_clients=$(hyprctl clients -j | jq -c '.[] | {workspace: .workspace.id, app: .class}')
+
+  # Fetch workspaces and map them to their window counts
+  workspaces=$(hyprctl workspaces -j | jq -c 'map({key: (.id | tostring), value: .windows}) | from_entries')
+
+  # Initialize output
+  output="["
+
+  # Process workspaces from 1 to 10
+  for workspace_id in $(seq 1 10); do
+    # Get the number of windows in the workspace
+    windows=$(echo "$workspaces" | jq -r --arg id "$workspace_id" '.[$id] // 0')
+
+    # Get the app class for the workspace
+    app_class=$(echo "$workspace_clients" | jq -r --arg id "$workspace_id" 'select(.workspace == ($id | tonumber)) | .app' | tr '[:upper:]' '[:lower:]')
+
+    # Sanitize app_class to avoid invalid keys  
+    if [[ -z "$app_class" ]]; then
+      app_class="unknown"
+    fi
+
+    # Determine the icon for the app
+    icon=${app_icons[$app_class]:-$default_icon}
+
+    # Append to output
+    output+=$(jq -n --arg id "$workspace_id" --argjson windows "$windows" --arg icon "$icon" \
+      '{id: $id, windows: $windows, icon: $icon}'), 
+  done
+
+  # Finalize JSON output
+  output="${output%,}]"
+  echo "$output"
+}
+
+spaces
+socat -u UNIX-CONNECT:$XDG_RUNTIME_DIR/hypr/$HYPRLAND_INSTANCE_SIGNATURE/.socket2.sock - | while read -r line; do
+  spaces
+done

@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Check if there are any systray items
+if [ "$(xprop -root | grep '_NET_SYSTEM_TRAY_S0')" ]; then
+  echo "true"
+else
+  echo "false"
+fi

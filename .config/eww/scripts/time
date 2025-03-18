@@ -1,0 +1,5 @@
+#!/bin/bash
+
+time=$(date +"%H:%M")
+time_icon=""
+echo "$time_icon  $time"
