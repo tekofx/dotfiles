@@ -15,7 +15,7 @@
 # sudo_command = "sudo"
 
 # Disable specific steps - same options as the command line flag
-disable = ["jetbrains_toolbox"]
+disable = ["jetbrains_toolbox", "containers"]
 
 # Ignore failures for these steps
 # ignore_failures = ["powershell"]
